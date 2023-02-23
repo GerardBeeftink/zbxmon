@@ -1,5 +1,5 @@
 # Powershell script for Zabbix agents.
-
+# GAB
 # Version 2.1 - for Zabbix agent 5x
 
 ## This script will check for pending Windows Updates, report them to Zabbix, and optionally install the updates.
