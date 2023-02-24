@@ -23,12 +23,14 @@ $ZabbixConfFile = "$Env:Programfiles\Zabbix"
 
 # Do not change the following variables unless you know what you are doing
 
-$htReplace = New-Object hashtable
-foreach ($letter in (Write-Output ä ae ö oe ü ue Ä Ae Ö Oe Ü Ue ß ss)) {
-    $foreach.MoveNext() | Out-Null
-    $htReplace.$letter = $foreach.Current
-}
-$pattern = "[$(-join $htReplace.Keys)]"
+# Uitgesterd ivm foutmeldingen
+# $htReplace = New-Object hashtable
+# foreach ($letter in (Write-Output ä ae ö oe ü ue Ä Ae Ö Oe Ü Ue ß ss)) {
+#     $foreach.MoveNext() | Out-Null
+#     $htReplace.$letter = $foreach.Current
+# }
+# $pattern = "[$(-join $htReplace.Keys)]"
+
 $returnStateOK = 0
 $returnStateWarning = 1
 $returnStateCritical = 2
