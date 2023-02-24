@@ -1,6 +1,6 @@
 # Powershell script for Zabbix agents.
-# G.A.B.
-# Version 2.1 - for Zabbix agent > 5x
+# GAB 24-02-2023
+# Version 2.1 - for Zabbix agent 5x
 
 ## This script will check for pending Windows Updates, report them to Zabbix, and optionally install the updates.
 
@@ -213,7 +213,7 @@ if ($countCritical -gt 0 -Or $countOptional -gt 2) {
 						Add-Content $ReportFile "`t Download Status: SUCCESS"
 					}
 					Else {
-						Add-Content $ReportFile "`t Download Status: FAILED With Error"
+						Add-Content $ReportFile "`t Download Status: FAILED With Error -- $Error()"
 						$Error.Clear()
 						Add-content $ReportFile "`r"
 					}	
@@ -237,7 +237,7 @@ if ($countCritical -gt 0 -Or $countOptional -gt 2) {
 					}
 					Catch {
 						[System.Exception]
-						Add-Content $ReportFile "`t Update Installation Status: FAILED With Error"
+						Add-Content $ReportFile "`t Update Installation Status: FAILED With Error -- $Error()"
 						$Error.Clear()
 						Add-content $ReportFile "`r"
 					}	
