@@ -1,5 +1,5 @@
 # Powershell script for Zabbix agents.
-# GAB 24-02-2023
+
 # Version 2.1 - for Zabbix agent 5x
 
 ## This script will check for pending Windows Updates, report them to Zabbix, and optionally install the updates.
@@ -302,10 +302,7 @@ if ($countHidden -gt 0) {
 	& $Sender $Senderarg1 $Senderarg2 $Senderarg3 $Senderarg4 $env:temp$SenderargcountHidden -s "$env:computername"
 	& $Sender $Senderarg1 $Senderarg2 $Senderarg3 $Senderarg5 $Senderargupdating $Senderarg6 $Senderarg7 -s "$env:computername"
 	
-	
 	exit $returnStateOK
-	
-	
 }
 
 exit $returnStateUnknown
